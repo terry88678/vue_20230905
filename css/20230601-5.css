@@ -1,0 +1,179 @@
+:root {
+    --mycolor01: #B2A59F;
+    --mycolor02: #023459;
+    --mycolor03: #1E646E;
+    --mycolor04: #002C2F;
+    --mycolor05: #D5D2C1;
+    --mycolor06: #BD8E62;
+    --mycolor07: #A46843;
+    --mycolor08: #370D00;
+}
+
+body {
+    background-color: var(--mycolor07);
+    padding-top: 15px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    /*margin=置中*/
+    width: 1024px;
+    /*width=寬度*/
+}
+
+.wrapper img {
+    width: 100%;
+}
+.wrapper .logo{
+    width: 100%;
+    height: 200px;
+    background-color: var(--mycolor04);
+    background-image: url(../images/photo-1682700370966-061ea62445ec.avif);
+    background-position: center center;/*圖片置中*/
+    background-size: cover;/*會把圖片等比例填滿區域*/
+}
+
+nav {
+    background-color: var(--mycolor01);
+    /*底色*/
+    text-align: center;
+    /*文字置中*/
+}
+
+/*nav ul{display: inline-block;}   nav ul li{float: left;}這兩個要憶起使用*/
+nav ul {
+    display: inline-block;
+}
+
+nav ul li {
+    float: left;
+    list-style-type: none;
+    /*list-style-type: none取消文字前面的點*/
+}
+
+nav ul li a {
+    display: block;
+    /*按鈕製作*/
+    padding-top: 10px;
+    /*由上往下控制的距離*/
+    padding-bottom: 10px;
+    /*下往上*/
+    padding-left: 20px;
+    /*左到右*/
+    padding-right: 20px;
+    /*右到左*/
+    background-color: var(--mycolor06);
+    /*底色*/
+    margin-right: 2px;
+    /*按鈕間格*/
+    color: var(--mycolor04);
+    /*字體顏色*/
+    text-decoration: none;
+    /*關閉超連結*/
+    font-weight: bolder;
+    /*字體加粗*/
+}
+
+nav ul li a:hover {
+    /*滑鼠移到上面後所出現的顏色*/
+    background-color: var(--mycolor01);
+    /*框架顏色*/
+    color: var(--mycolor05);
+    /*文字顏色*/
+}
+
+/*5.6.7號的連結設定*/
+.friend_link nav {
+    background-color: var(--mycolor03);
+    text-align: center;
+}
+
+.friend_link nav ul {
+    display: inline-block;
+}
+
+.friend_link nav ul li {
+    float: left;
+    list-style-type: none;
+}
+
+.friend_link nav ul li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--mycolor05);
+    margin-right: 2px;
+    color: var(--mycolor08);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.friend_link nav ul li a:hover {
+    background-color: var(--mycolor04);
+    color: var(--mycolor07);
+}
+
+.content_in {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: var(--mycolor05);
+}
+
+.content_in h1 {
+    color: var(--mycolor06);
+    margin-bottom: 30px;
+}
+
+.content_in p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.content_in nav {
+    background-color: var(--mycolor05);
+    text-align: center;
+}
+
+.content_in nav ul li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--mycolor02);
+    margin-right: 2px;
+    color: var(--mycolor07);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.content_in nav ul li a:hover {
+    background-color: var(--mycolor07);
+    color: var(--mycolor02);
+}
+
+.footer {
+    background-color: var(--mycolor08);
+    color: var(--mycolor01);
+}
+
+.footer p {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: var(--mycolor03);
+}
+/*@media screen and (max-width: 1024px){
+    .wrapper{width: 95%;}}這是手機專用的指令max-width: 1024px表示最大到1024px
+    width: 95%;這是等比縮放*/
+@media screen and (max-width: 1024px){
+    .wrapper{
+        width: 95%;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+</head>
+<body>
+    <div id="app">
+         <!-- 1. v-model 綁定 -->
+         <div class="demo">
+            <h2>1. v-model 綁定</h2>
+            <input type="text" class="form-control" v-model="mytitle">
+            <p class="h3 mt-3">你輸入的字為: {{ mytitle }}</p>
+            <div v-text="mytitle"></div>
+            <div v-html="mytitle"></div>
+        </div>
+
+        <!-- 2. v-bind 綁定 -->
+        <div class="demo">
+            <h2>2. v-bind(可以簡寫為:表示)</h2>
+            <img v-bind:src="imgSrc" alt="" v-bind:class="classw50">
+            <br>
+            <img v-bind:src="imgSrc1" alt="" v-bind:class="classw25">
+            <!-- 可以利用改變圖片名稱來換圖片 -->
+            <input type="text" class="form-control my-3" v-model="imgSrc">
+        </div>
+        <!-- 3.v-for and v-if -->
+        <div class="demo">
+            <h2>3.v-for and v-if</h2>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="(item, key) in list">
+                    {{ key+1 }}.{{ item.product }} 1斤 ==>{{ item.price }}元
+                </li>
+            </ul>
+            <!-- v-for and v-if不可同時寫在一起需要寫在不同行 所以外層需要再多一層template把他們做分開 -->
+            <ul class="list-group my-3">
+                <template v-for="(item, key) in list">
+                    <li class="list-group-item" v-if="item.price > 100">
+                    {{ key+1 }}.{{ item.product }} 1斤 ==>{{ item.price }}元
+                    </li>
+                </template>
+            </ul>
+
+
+            <!-- v-bind:class="{'active': mylink == '草莓'}" 括弧內左邊是要給class加上的內容  右邊是判斷條件 當條件成立時會把左邊的選項家道class裡面 -->
+                             
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '草莓'" v-bind:class="{'active' : mylink == '草莓'}">草莓</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '香蕉'"  v-bind:class="{'active' : mylink == '香蕉'}">香蕉</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '西瓜'" v-bind:class="{'active' : mylink == '西瓜'}">西瓜</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" v-on:click.prevent="mylink = '水蜜桃'"  v-bind:class="{'active' : mylink == '水蜜桃'}">水蜜桃</a>
+                </li>
+            </ul>
+            <ul class="list-group my-3">
+                <template v-for="(item, key) in list">
+                    <li class="list-group-item" v-if="item.product == mylink">
+                       {{ item.city }} 地區的 {{ item.product }} 1公斤, 賣 {{ item.price }} 元.
+                    </li> 
+                </template>
+            </ul>
+
+
+
+        </div>
+
+
+
+    </div>
+    <script src="js/js_bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+        const App = {
+            data() {
+                return {
+                    text01: 'hello world',
+                    text02: 'hello world',
+                    mytitle: 'vue教學示範',
+                    imgSrc: 'images/elden ring.jpg',
+                    imgSrc1: 'images/EG.jpg',
+                    classw50: 'w-50',
+                    classw25: 'w-25',
+                    mylink:'草莓',
+                    list:[
+                        {
+                            product: '草莓',
+                            price: 100,
+                            city: '台北'
+                        },
+                        {
+                            product: '草莓',
+                            price: 100,
+                            city: '新北'
+                        },
+                        {
+                            product: '草莓',
+                            price: 100,
+                            city: '基隆'
+                        },
+                        {
+                            product: '香蕉',
+                            price: 80,
+                            city: '台中'
+                        },
+                        {
+                            product: '香蕉',
+                            price: 80,
+                            city: '桃園'
+                        },
+                        {
+                            product: '香蕉',
+                            price: 80,
+                            city: '新竹'
+                        },
+                        {
+                            product: '西瓜',
+                            price: 200,
+                            city: '高雄'
+                        },
+                        {
+                            product: '西瓜',
+                            price: 200,
+                            city: '苗栗'
+                        },
+                        {
+                            product: '西瓜',
+                            price: 200,
+                            city: '彰化'
+                        },
+                        {
+                            product: '水蜜桃',
+                            price: 500,
+                            city: '恆春'
+                        },
+                        {
+                            product: '水蜜桃',
+                            price: 500,
+                            city: '雲林'
+                        },
+                        {
+                            product: '水蜜桃',
+                            price: 500,
+                            city: '台南'
+                        },
+                    ]
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

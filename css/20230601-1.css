@@ -1,0 +1,30 @@
+/*:root{}是定義顏色的代號*/
+:root {
+    --mycolor01: #B2A59F;
+    --mycolor02: #023459;
+    --mycolor03: #1E646E;
+    --mycolor04: #002C2F;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(204, 142, 19);
+}
+
+.box01 {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #faf;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.box02 {
+    width: 150px;
+    height: 150px;
+    border: 10px solid #17A57F;
+    background-color: var(--mycolor01);
+
+}

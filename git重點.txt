@@ -3,3 +3,5 @@
 2.git add .
 
 3.git commit -m(寫自己要看的註解)
+
+4.git push
